@@ -1,0 +1,32 @@
+:root {}
+
+::before,
+ ::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    border: black 1px solid;
+    padding: 2rem;
+}
+
+section:focus {
+    border: 1px solid blue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}

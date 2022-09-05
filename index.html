@@ -6,17 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch Odin Project</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <header>
+        <h1>Etch A Sketch </h1>
+    </header>
 
-    <h1>Etch A Sketch </h1>
-    <div class="container">
+    <main>
+        <form>
+            <label for="row"> Row </label>
+            <input type="number" id="row" name="row" min="1" max="50">
+            <label for="column"> Column </label>
+            <input type="number" id="column" name="column" min="1" max="100">
+            <input type="submit" value="submit" name="submit" id="submit-btn">
+            <input type="submit" value="clear" name="clear" id="clear-btn">
+        </form>
 
-    </div>
+        <div class="container"></div>
+    </main>
 
 
-
+    <footer>
+        <small>Made by Bosibori</small>
+    </footer>
     <script src="index.js"></script>
 </body>
 
