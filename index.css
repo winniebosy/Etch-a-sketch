@@ -19,7 +19,9 @@
 
 section {
     border: black 1px solid;
-    padding: 2rem;
+    height: 15px;
+    width: 10px;
+    padding: 10px;
 }
 
 section:focus {
@@ -27,6 +29,24 @@ section:focus {
 }
 
 main {
+    height: 90vh;
+    background-color: rgb(255, 254, 253);
+}
+
+form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="number"] {
+    padding: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem;
 }

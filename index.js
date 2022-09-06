@@ -6,8 +6,7 @@ let clearBtn = document.querySelector('#clear-btn')
 let inputRow = document.querySelector('#row');
 //console.log(inputRow)
 let inputColumn = document.querySelector('#column')
-
-
+let colorSelector = document.querySelector('#color');
 
 //creating out etch-a-sketch divs
 function createDivs() {
@@ -20,24 +19,42 @@ function createDivs() {
         console.log(gridRow)
         for (let c = 1; c <= rowsInput; c++) {
             let gridCells = document.createElement('section')
-            gridCells.setAttribute("tabindex", 0)
+            gridCells.setAttribute("tabindex", 0);
+            gridCells.focus();
             gridRow.appendChild(gridCells);
             //styles the background layer color
             gridCells.addEventListener('mouseenter', (e) => {
-                    e.target.style.backgroundColor = 'red';
+                let colorValue = colorSelector.value;
+                //color value based on user choice
+                gridCells.style.backgroundColor = colorValue;
+            });
 
+            //continue from here
 
-                })
-                //adding color using arrow keys
-            gridCells.addEventListener('keydown', (e) => {
-                if (e.key === 9) {
-                    //gridCells.setAttribute("tabindex", 0)
+            //console.log(firstElement)
+            //adding color using arrow keys
+            // gridCells.addEventListener('keydown', (e) => {
+            //     //e.key === 9 || e.key === 'Tab'
+            //     //up arrow
+            //     if (e.key === 38 || e.key === 'ArrowUp') {
+            //         e.target.style.backgroundColor = 'red';
+            //         gridCells.focus();
+            //         console.log(e.key);
+            //         //down arrow
+            //     } else if (e.key === 40 || e.key === 'ArrowDown') { //down arrow 
+            //         e.target.style.backgroundColor = 'red';
+            //         console.log(e.key);
 
+            //     } else if (e.key === 39 || e.key === 'ArrowRight') {
+            //         e.target.style.backgroundColor = 'red';
+            //         console.log(e.key);
 
-                    console.log('down arrow pressed')
+            //     } else if (e.key === 37 || e.key === 'ArrowLeft') {
+            //         e.target.style.backgroundColor = 'red';
+            //         console.log(e.key);
 
-                }
-            })
+            //     }
+            // })
 
         }
     }
@@ -51,6 +68,7 @@ function createDivs() {
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     createDivs(16, 16)
+
     disableBtn();
 
 })
@@ -69,3 +87,6 @@ clearBtn.addEventListener('click', (e) => {
 function disableBtn() {
     submitBtn.disabled = true;
 }
+
+
+//selecting color
